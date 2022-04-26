@@ -1,3 +1,3 @@
-web:npm install
-web:npm run build
-web:npm start -p $PORT
+web: npm install
+web: npm run build
+web: npm start -p $PORT
