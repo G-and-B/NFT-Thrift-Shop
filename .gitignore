@@ -1,4 +1,5 @@
  #ignore node modules
+package-lock.json
 /node_modules/
 /.next/
 ./node_modules/**
