@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "npm run dev -p $PORT",
+    "start": "npm install && npm run dev -p $PORT",
     "lint": "next lint"
   },
   "dependencies": {
