@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
@@ -8,7 +9,23 @@ export default function Home(){
   return (
     <>
     hello
-    {/* <Layout>hello</Layout> */}
+    <ul>
+      <li>
+        <Link href="/">
+          <a>Home</a>
+        </Link>
+      </li>
+      <li>
+        <Link href="/about">
+          <a>About Us</a>
+        </Link>
+      </li>
+      <li>
+        <Link href="/blog/hello-world">
+          <a>Blog Post</a>
+        </Link>
+      </li>
+    </ul>
     </>
   )
 }
