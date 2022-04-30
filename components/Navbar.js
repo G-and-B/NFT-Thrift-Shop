@@ -60,19 +60,19 @@ const navbarStyle = {
                 Home
               </a>
             </Link>
-            <Link href='/about'>
+            <Link href='/yourCollection'>
               <a className='lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-white font-bold items-center justify-center hover:bg-green-600 hover:text-white'>
-                Services
+                Your Collection
+              </a>
+            </Link>
+            <Link href='/Create'>
+              <a className='lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-white font-bold items-center justify-center hover:bg-green-600 hover:text-white'>
+                Create
               </a>
             </Link>
             <Link href='/blog'>
               <a className='lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-white font-bold items-center justify-center hover:bg-green-600 hover:text-white'>
                 About us
-              </a>
-            </Link>
-            <Link href='/'>
-              <a className='lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-white font-bold items-center justify-center hover:bg-green-600 hover:text-white'>
-                Contact us
               </a>
             </Link>
           </div>

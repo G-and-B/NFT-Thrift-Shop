@@ -16,13 +16,8 @@ export default function Home(){
         </Link>
       </li>
       <li>
-        <Link href="/about">
-          <a>About Us</a>
-        </Link>
-      </li>
-      <li>
-        <Link href="/blog/hello-world">
-          <a>Blog Post</a>
+        <Link href="/yourCollection">
+          <a>Your Collection</a>
         </Link>
       </li>
     </ul>

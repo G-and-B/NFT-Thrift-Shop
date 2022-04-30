@@ -6,18 +6,19 @@ import styles from '../styles/Home.module.css'
 import {Layout} from '../components/Layout'
 import Card from './card';
 
-export default function About(){
+export default function yourCollection(){
   return (
-    <div className="grid grid-rows-4 grid-flow-col gap-4">
-        <Card/>
-        <Card/>
-        <Card/>
-        <Card/>
-        <Card/>
-        <Card/>
-    {/* <Card/>
-    <Card/>
-    <Card/> */}
+    <div className={styles.wrapper}>
+      <Card/>
+      <Card/>
+      <Card/>
+      <Card/>
+      <Card/>
+      <Card/>
+      <Card/>
+      <Card/>
+      <Card/>
+      <Card/>
     </div>
   )
 }

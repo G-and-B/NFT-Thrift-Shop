@@ -5,10 +5,10 @@ import styles from '../styles/Home.module.css'
 
 import {Layout} from '../components/Layout'
 
-export default function About(){
+export default function Home(){
   return (
     <>
-    Blog
+     This is the create page...
     <ul>
       <li>
         <Link href="/">
@@ -16,13 +16,8 @@ export default function About(){
         </Link>
       </li>
       <li>
-        <Link href="/about">
-          <a>About Us</a>
-        </Link>
-      </li>
-      <li>
-        <Link href="/blog">
-          <a>Blog Post</a>
+        <Link href="/yourCollection">
+          <a>Your Collection</a>
         </Link>
       </li>
     </ul>

@@ -115,3 +115,11 @@
     flex-direction: column;
   }
 }
+
+
+
+.wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  flex: 200px;
+} 
