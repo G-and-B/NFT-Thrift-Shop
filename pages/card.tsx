@@ -3,7 +3,6 @@ import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import mountains from '../assets/184.jpg'
-import {Layout} from '../components/Layout'
 
 export default function Card(){
   return (
