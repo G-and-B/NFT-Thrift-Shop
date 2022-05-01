@@ -1,7 +1,7 @@
 //require('dotenv').config();
 
 
-interface window {
+interface Window {
     ethereum: any
 }
 
