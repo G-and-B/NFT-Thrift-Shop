@@ -2,16 +2,30 @@ import Link from 'next/link'
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
+import { connectWallet } from '../components/interact'
+const { createAlchemyWeb3 } = require("@alch/alchemy-web3");
 
-export default function Home(){
+const connectWalletHandler = async () => {
+  console.log('callback for connect wallet...')
+  const walletResponse = await connectWallet();
+  console.log(walletResponse)
+}
+
+
+export default function Create(){
   return (
     <div>
       
-      <h1 id={styles.header1} >🧙‍♂️ 
+      <h1 
+        id={styles.header1} 
+        >🧙‍♂️ 
         Alchemy NFT Minter
       </h1>
       
-      <button id={styles.walletButton}>
+      <button 
+        id={styles.walletButton}
+        onClick={connectWalletHandler}
+        >
         <span> Connect Wallet</span>
       </button>
       
