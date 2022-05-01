@@ -9,7 +9,7 @@ export default function Home(){
     <>
     hello
     <ul>
-      <li>
+      <li>    
         <Link href="/">
           <a>Home</a>
         </Link>
