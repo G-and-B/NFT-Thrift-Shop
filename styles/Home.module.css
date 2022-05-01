@@ -123,3 +123,65 @@
   flex-wrap: wrap;
   flex: 200px;
 } 
+
+#walletButton {
+  text-align:right;
+  float:right;
+  margin-top: 20px;
+  margin-right: 100px;
+  padding: 9px 16px;
+  border-color: #254cdd;
+  color: black;
+  background-color: lightskyblue;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  text-align: center;
+  font-weight: bold;
+  cursor:pointer;
+}
+
+#mintButton {
+  margin-top: 40px;
+  background-color: #254cdd;
+  color:white;
+}
+
+#createbutton {
+  padding: 9px 16px;
+  max-height: 40px;
+  border-color: #254cdd;
+  color: #254cdd;
+  background-color: white;
+  border-radius: 8px;
+  align-items: center;
+  font-size: 16px;
+  font-weight: 500;
+  text-align: center;
+  font-weight: bold;
+  cursor:pointer;
+}
+
+#header1 {
+  text-align: center;
+}
+
+#p1 {
+  margin-top: 100px;
+  text-align: center;
+}
+
+#form1 {
+  margin-top: 100px;
+  text-align: center;
+}
+
+#form_header1 {
+  margin-top: 25px;
+}
+#form_header2 {
+  margin-top: 25px;
+}
+#form_header3 {
+  margin-top: 25px;
+}
