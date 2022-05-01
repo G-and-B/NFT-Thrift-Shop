@@ -1,0 +1,16 @@
+
+.navbar{ min-height:50px; background:lightcyan; }
+
+.footer{ 
+    min-height:50px; 
+    background:PapayaWhip;
+    margin-top:auto; 
+}
+
+/* Trick */
+.main{ 
+  height:100vh; 
+  margin:0;
+  display:flex; 
+  flex-direction:column; 
+}
