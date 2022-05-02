@@ -30,7 +30,7 @@ export default function Create(){
       </button>
       
       <p id={styles.p1}>
-        Simply add your asset's link, name, and description, then press "Mint."
+        Simply add your asset&apos;s link, name, and description, then press &quot;Mint.&quot;
       </p>
       
       <form id={styles.form1}>
