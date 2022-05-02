@@ -1,12 +1,13 @@
 //require('dotenv').config();
 
-
-interface Window {
-    ethereum: any
-}
-
-interface window {
-    ethereum: any
+declare global {
+    interface Window {
+        ethereum: any
+    }
+    
+    interface window {
+        ethereum: any
+    }
 }
 
 
