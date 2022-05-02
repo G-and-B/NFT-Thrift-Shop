@@ -5,6 +5,11 @@ interface Window {
     ethereum: any
 }
 
+interface window {
+    ethereum: any
+}
+
+
 export async function getStaticProps(){
     const alchemyKey = process.env.REACT_APP_ALCHEMY_KEY;
     const { createAlchemyWeb3 } = require("@alch/alchemy-web3");
