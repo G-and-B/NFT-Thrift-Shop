@@ -34,10 +34,11 @@ export const connectWallet = async() => {
             };
             return obj;
         }catch(err: unknown){
-        return{
-            address: "",
-            status: "😥 " + err.message,
-            };
+            if(typeof err === 'object' && err != null){
+                return{err};
+            }else{
+                console.log('unexpected error',err);
+            }
         }
     }else{
         console.log('there is no ethereum window')
