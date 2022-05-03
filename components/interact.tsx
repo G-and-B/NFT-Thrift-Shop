@@ -1,22 +1,54 @@
+
+import {pinJSONToIPFS} from './pinata';
+
 //require('dotenv').config();
 
 declare global {
-    interface Window {
+
+  interface walletRequest_t{
+    address: string;
+    status:  string;
+  }
+
+  interface NFT_t{
+    name:        string;
+    image:       string;
+    description: string;    
+  }
+
+  interface mintNFT_t{
+    address: boolean;
+    status:  string;
+  }
+
+  interface Window {
         ethereum: any
     }
     
-    interface window {
-        ethereum: any
-    }
+  interface window {
+      ethereum: any
+      contract: any
+  }
 }
 
+// const { createAlchemyWeb3 } = require("@alch/alchemy-web3");
+// //const web3 = createAlchemyWeb3(alchemyKey);     
 
-export async function getStaticProps(){
-    const alchemyKey = process.env.REACT_APP_ALCHEMY_KEY;
-    const { createAlchemyWeb3 } = require("@alch/alchemy-web3");
-    const web3 = createAlchemyWeb3(alchemyKey); 
-}
-
+// export const getStaticProps: GetStaticProps = async () => {
+//   const alchemyKey = process.env.REACT_APP_ALCHEMY_KEY;  
+//   console.log('the alchemy key:')
+//   console.log(alchemyKey)
+//   return {
+//       props: {key: alchemyKey}
+//     }
+// }
+// const alchemyKey = (key: InferGetStaticPropsType<typeof getStaticProps>) => {
+//   console.log(key);
+//   let key = awaitgetStaticProps();
+//   return key.alchemykey;
+// }
+// const webKey = alchemyKey("");
+// const web3 = createAlchemyWeb3(alchemyKey);     
 
 //const contractAddress = "0x2990AA37Ce6559b4a48897205015965102392102"
 //const contractABI = require('../NFTMinter-abi.json')
@@ -34,13 +66,116 @@ export const connectWallet = async() => {
             };
             return obj;
         }catch(err: unknown){
-            if(typeof err === 'object' && err != null){
-                return{err};
-            }else{
-                console.log('unexpected error',err);
-            }
+          console.log('unexpected error',err);
         }
     }else{
         console.log('there is no ethereum window')
+        // return{
+        //     address: "",
+        //     status: (
+        //     <span>
+        //         <p>
+        //           {" "}
+        //         🦊{" "}
+        //         <a target="_blank" href={`https://metamask.io/download.html`}>
+        //             You must install Metamask, a virtual Ethereum wallet, in your
+        //             browser.
+        //         </a>
+        //         </p>
+        //     </span>
+        //     ),
+        // };
     }
 };
+
+export const getCurrentWalletConnected = async () => {
+  let walletRet = {address: "",status: ""};
+  if (window.ethereum) {
+        try {
+          const addressArray = await window.ethereum.request({
+            method: "eth_accounts",
+          });
+          if (addressArray.length > 0) {
+            walletRet.address = addressArray[0];
+            walletRet.status = "👆🏽 Write a message in the text-field above.";
+          } else {
+            walletRet.address = "address array length was 0";
+            walletRet.status = "🦊 Connect to Metamask using the top right button."
+          }
+          return walletRet;
+        } catch(err: unknown) {
+            console.log('unexpected error',err);
+            walletRet.address = "catch cought an error";
+            walletRet.status = "encountered an error...";
+        }
+      } else {
+        // return{
+        //   address: "",
+        //   status: (
+        //     <span>
+        //       <p>
+        //         {" "}
+        //         🦊{" "}
+        //         <a target="_blank" href={`https://metamask.io/download.html`}>
+        //           You must install Metamask, a virtual Ethereum wallet, in your
+        //           browser.
+        //         </a>
+        //       </p>
+        //     </span>
+        //   ),
+        // };
+      }
+}
+
+// export const mintNFT = async(url:string, name:string, description:string) => {
+//   //error handling
+//   if (url.trim() == "" || (name.trim() == "" || description.trim() == "")) { 
+//          return {
+//              success: false,
+//              status: "❗Please make sure all fields are completed before minting.",
+//          }
+//    }
+//    //make metadata
+//    console.log(url)
+//    const metadata: NFT_t = {name:"",image:"",description:""}
+//    metadata.name = name;
+//    metadata.image = url;
+//    metadata.description = description;
+ 
+//    //make pinata call
+//    const pinataResponse = await pinJSONToIPFS(metadata);
+//    if (!pinataResponse.success){
+//        return {
+//            success: false,
+//            status: "😢 Something went wrong while uploading your tokenURI.",
+//        }
+//    } 
+//    const tokenURI = pinataResponse.pinataUrl;  
+//    console.log(web3)
+//   // window.contract = await new web3.eth.Contract(contractABI, contractAddress);
+
+//   // //set up your Ethereum transaction
+//   // const transactionParameters = {
+//   //     to:   contractAddress, // Required except during contract publications.
+//   //     from: window.ethereum.selectedAddress, // must match user's active address.
+//   //     'data': window.contract.methods.mintNFT(window.ethereum.selectedAddress, tokenURI).encodeABI()//make call to NFT smart contract 
+//   // };
+
+//   // //sign the transaction via Metamask
+//   // try {
+//   //     const txHash = await window.ethereum
+//   //         .request({
+//   //             method: 'eth_sendTransaction',
+//   //             params: [transactionParameters],
+//   //         });
+//   //         return {
+//   //             success: true,
+//   //             status: "✅ Check out your transaction on Etherscan: https://ropsten.etherscan.io/tx/" + txHash
+//   //         }
+//   //     } catch (error) {
+//   //         return {
+//   //             success: false,
+//   //             status: "😥 Something went wrong: " + error.message
+//   //         }
+//   // }
+//  }

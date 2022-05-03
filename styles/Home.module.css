@@ -141,10 +141,25 @@
   cursor:pointer;
 }
 
+
 #mintButton {
   margin-top: 40px;
   background-color: #254cdd;
   color:white;
+  text-align:right;
+  float:right;
+  margin-top: 20px;
+  margin-right: 250px;
+  padding: 9px 16px;
+  border-color: #254cdd;
+  color: black;
+  background-color: lightskyblue;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  text-align: center;
+  font-weight: bold;
+  cursor:pointer;
 }
 
 #createbutton {
